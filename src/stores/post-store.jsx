@@ -14,7 +14,7 @@ module.exports = Reflux.createStore({
 			}.bind(this));
 	},
 	getRandomPost: function(topicId){
-		return Api.get('posts/?filter[orderby]=rand&filter[posts_per_page]=1&filter[cat]=15')
+		return Api.get('posts/?filter[orderby]=rand&filter[posts_per_page]=1&filter[cat]=10')
 			.then(function(json){
 				this.randomPost = json[0]; 
 				this.triggerRandomPostChange();
