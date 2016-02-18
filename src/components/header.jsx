@@ -4,7 +4,6 @@ var Reflux = require('reflux');
 
 var Link = Router.Link;
 
-var Search = require('./search');
 var DropdownItems = require('./dropdown-items');
 
 var Actions = require('../actions');

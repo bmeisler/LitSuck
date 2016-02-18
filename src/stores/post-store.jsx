@@ -13,6 +13,13 @@ module.exports = Reflux.createStore({
 				this.triggerChange();
 			}.bind(this));
 	},
+	getRandomPost: function(topicId){
+		return Api.get('posts/?filter[orderby]=rand&filter[posts_per_page]=1&filter[cat]=15')
+			.then(function(json){
+				this.randomPost = json[0]; 
+				this.triggerRandomPostChange();
+			}.bind(this));
+	},
 	getPost: function(id){
 		console.log("get post with id: " + id);
 		return Api.get('posts/' + id)
@@ -47,5 +54,9 @@ module.exports = Reflux.createStore({
 	triggerPostChange: function(){
 		console.log("triggerPostChange");
 		this.trigger('change', this.post);
+	},
+	triggerRandomPostChange: function(){
+		console.log("triggerRandomPostChange");
+		this.trigger('change', this.randomPost);
 	}
 });

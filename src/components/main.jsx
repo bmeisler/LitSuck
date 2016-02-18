@@ -4,6 +4,7 @@ and TopicList - a list of categories */
 var React = require('react');
 var Header = require('./header');
 var TopicList = require('./topic-list');
+var PostRandom = require('./post-random');
 
 module.exports = React.createClass({
 	render: function(){
@@ -14,10 +15,11 @@ module.exports = React.createClass({
 		</div>
 	},
 	content: function(){
+
 		if(this.props.children){
 			return this.props.children
 		}else{
-			return <TopicList />
+			return <PostRandom />
 		}
 	}
 }); 
