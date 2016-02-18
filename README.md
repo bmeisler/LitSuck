@@ -1,3 +1,6 @@
+This is a React.js project which scrapes data from a WordPress site using the WP Rest API plugin. 
+
+
 Began the project with Stephen Grider's ReactStarter framework. Then:
 
 ```
