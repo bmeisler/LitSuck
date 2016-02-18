@@ -9,6 +9,31 @@ var DropdownItems = require('./dropdown-items');
 var Actions = require('../actions');
 var TopicStore = require ('../stores/topic-store');
 
+var categories = {
+    cats: [{
+        name: 'Writing',//what should the button be called to open/close the dropdown
+        id: 10
+      },
+      {
+        name: 'Essays',//what should the button be called to open/close the dropdown
+        id: 15
+      },
+      {
+        name: 'Classics',//what should the button be called to open/close the dropdown
+        id: 818
+      },
+      {
+        name: 'Poetry',//what should the button be called to open/close the dropdown
+        id: 23
+      },
+      {
+        name: 'Stories',//what should the button be called to open/close the dropdown
+        id: 25
+      }
+      ]
+   
+  };
+
 
 module.exports = React.createClass({
 	mixins: [
@@ -16,11 +41,11 @@ module.exports = React.createClass({
 	],
 	getInitialState: function(){
 		return {
-			topics: []
+			topics: categories.cats
 		}
 	},
 	componentWillMount: function(){
-		Actions.getTopics();
+		//Actions.getTopics();
 	},
 	render: function(){
 		return <nav className="navbar navbar-default header">
