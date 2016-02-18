@@ -29,6 +29,10 @@ var categories = {
       {
         name: 'Stories',//what should the button be called to open/close the dropdown
         id: 25
+      },
+      {
+        name: 'Reviews',//what should the button be called to open/close the dropdown
+        id: 695
       }
       ]
    
@@ -48,7 +52,7 @@ module.exports = React.createClass({
 		//Actions.getTopics();
 	},
 	render: function(){
-		return <nav className="navbar navbar-default header">
+		return <nav className="navbar navbar-static-top">
 				<div className="container-fluid">
 					<Link to="/" className = "navbar-brand">
 						LitSuck
@@ -83,7 +87,7 @@ module.exports = React.createClass({
 	renderTopics: function(){
 		return this.state.topics.slice(0,8).map(function(topic){
 			return <li key={topic.id}>
-				<Link activeClassName="active" to={"topics/" + topic.id}>
+				<Link activeClassName="active" to={"topics/" + topic.name}>
 					{topic.name}
 				</Link>
 			</li>

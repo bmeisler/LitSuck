@@ -17,9 +17,14 @@ module.exports = React.createClass({
 		return <div><Link to={"posts/" + this.props.id}>
 		 <h4 dangerouslySetInnerHTML={this.rawMarkup(this.props.title.rendered)}></h4>
 		</Link>
-		<span dangerouslySetInnerHTML={this.rawMarkup(this.props.excerpt.rendered)} />
 		
-
+			<h5>by {this.props.theSubtitleAuthor ? this.props.theSubtitleAuthor : this.props.theAuthor}</h5>
+		
+		<p dangerouslySetInnerHTML={this.rawMarkup(this.props.excerpt.rendered)} ></p>
+		<figure className="figure-full-left">
+			<img src={this.props.featured_image_thumbnail_url} />
+		</figure>
+		
 		</div>
 	}
 }); 

@@ -12,7 +12,7 @@ var PostDetail = require('./components/post-detail');
 module.exports = (
     <Router>
         <Route path="/" component = {Main}>
-        	<Route path="topics/:id" component = {Topic} />
+        	<Route path="topics/:props" component = {Topic} />
         	<Route path="posts/:id" component = {PostDetail} />
         </Route>
     </Router>

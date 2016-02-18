@@ -37,6 +37,7 @@ module.exports = React.createClass({
 		}
 	}, 
 	componentWillMount: function(){
+		console.log("this.props: " + this.props)
 		Actions.getPost(this.props.params.id);
 	},
 	onChange: function(event, post){

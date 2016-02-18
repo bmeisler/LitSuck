@@ -23,6 +23,7 @@ module.exports = React.createClass({
 		var list = this.props.items.map(function(item){
 			return <ListItem 
 				item={item} 
+				key={item}
 				whenItemClicked={this.handleItemClick} 
 				className={this.state.itemTitle=== item ? "active" : "" }/>
 		}.bind(this));
