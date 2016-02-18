@@ -1,4 +1,6 @@
-This is a React.js project which scrapes data from a WordPress site using the WP Rest API plugin. 
+This is a React.js project which scrapes data from a WordPress site using the WP Rest API plugin. It is in a very early state - it will eventually be a mobile project built with React Native. You can see an early version here:
+
+http://evili.com/LitSuckDesktop/
 
 
 Began the project with Stephen Grider's ReactStarter framework. Then:
