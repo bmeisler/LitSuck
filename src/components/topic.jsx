@@ -30,10 +30,12 @@ module.exports = React.createClass({
 		}
 	},
 	componentWillMount: function(){
-		//Actions.getPosts(this.props.params.id);
+		Actions.getPosts(this.props.params.id);
 	},
 	componentWillReceiveProps: function(nextProps){
+		console.log("topic: received props");
 		Actions.getPosts(nextProps.params.id);
+		//Actions.getRecentPosts(nextProps.params.id);
 		//console.log(nextProps.params.id);
 	},
 	render: function(){
@@ -42,6 +44,7 @@ module.exports = React.createClass({
 		</div>
 	},
 	onChange: function(event, posts){
+		console.log("topic:onChange");
 		this.setState({
 			posts: posts
 		})

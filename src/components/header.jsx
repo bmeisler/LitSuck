@@ -80,6 +80,7 @@ module.exports = React.createClass({
 
 	},
 	onChange: function(event, topics){
+		console.log("header:onChange");
 		this.setState({
 			topics: topics
 		})

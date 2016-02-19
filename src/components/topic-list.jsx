@@ -21,7 +21,7 @@ var Link = ReactRouter.Link;
 
 module.exports = React.createClass({
 	mixins: [
-		Reflux.listenTo(TopicStore, 'onChange')//this compoonent listens to any event on TopicStore, then calls onChange
+		//Reflux.listenTo(TopicStore, 'onChange')//this compoonent listens to any event on TopicStore, then calls onChange
 	],
 	getInitialState: function(){
 		return {
@@ -48,6 +48,7 @@ module.exports = React.createClass({
 		});
 	},
 	onChange: function(event, topics){//called whenever TopicStore sends an event
+		console.log("topic-list:onChange");
 		this.setState(
 			{topics: topics})
 	}

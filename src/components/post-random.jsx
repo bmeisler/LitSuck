@@ -20,12 +20,14 @@ module.exports = React.createClass({
 	    
 	  },
 	render: function(){
-			return <div>
+			return <div className="row">
+			<div className="col-sm-12">
 			<h4 dangerouslySetInnerHTML={this.rawMarkup(this.state.title.rendered)}></h4>
-			
+			<h5>{this.state.theSubtitleAuthor ? this.state.theSubtitleAuthor : this.state.theAuthor}</h5>
+
 				
 			<span dangerouslySetInnerHTML={this.rawMarkup(this.state.content.rendered)} />
-				
+				</div>
 
 		</div>
 		
@@ -33,7 +35,9 @@ module.exports = React.createClass({
 	getInitialState:function(){
 		return{
 			title: "",
-			content: ""
+			content: "",
+			theAuthor: "",
+			theSubtitleAuthor: ""
 		}
 	}, 
 	componentWillMount: function(){
@@ -43,7 +47,9 @@ module.exports = React.createClass({
 		console.log("onChange called in post-detail");
 		this.setState({
 			title: post.title,
-			content: post.content
+			content: post.content,
+			theAuthor: post.theAuthor,
+			theSubtitleAuthor: post.theSubtitleAuthor
 		});
 	}
 });

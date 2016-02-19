@@ -14,16 +14,21 @@ module.exports = React.createClass({
 	    return { __html: rawMarkup };
 	  },
 	render: function(){
-		return <div><Link to={"posts/" + this.props.id}>
-		 <h4 dangerouslySetInnerHTML={this.rawMarkup(this.props.title.rendered)}></h4>
+		return <div className="archive-content">
+		
+		<figure className="post-img-thumb">
+			<img src={this.props.featured_image_thumbnail_url} />
+		</figure>
+		<header className="entry-header">
+		<Link to={"posts/" + this.props.id}>
+		 	<h4 dangerouslySetInnerHTML={this.rawMarkup(this.props.title.rendered)}></h4>
 		</Link>
 		
 			<h5>by {this.props.theSubtitleAuthor ? this.props.theSubtitleAuthor : this.props.theAuthor}</h5>
-		
-		<p dangerouslySetInnerHTML={this.rawMarkup(this.props.excerpt.rendered)} ></p>
-		<figure className="figure-full-left">
-			<img src={this.props.featured_image_thumbnail_url} />
-		</figure>
+		</header>
+		<div className="entry-content clearfix">
+			<p dangerouslySetInnerHTML={this.rawMarkup(this.props.excerpt.rendered)} ></p>
+		</div>
 		
 		</div>
 	}

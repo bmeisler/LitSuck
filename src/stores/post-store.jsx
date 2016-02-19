@@ -13,6 +13,13 @@ module.exports = Reflux.createStore({
 				this.triggerChange();
 			}.bind(this));
 	},
+	getRecentPosts: function(topicId){
+		return Api.get('posts/?filter[posts_per_page]=10&filter[cat]=' + topicId)
+			.then(function(json){
+				this.posts = json; 
+				this.triggerChange();
+			}.bind(this));
+	},
 	getRandomPost: function(topicId){
 		return Api.get('posts/?filter[orderby]=rand&filter[posts_per_page]=1&filter[cat]=10')
 			.then(function(json){
