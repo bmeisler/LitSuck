@@ -15,18 +15,16 @@ module.exports = React.createClass({
 	  },
 	render: function(){
 		return <div className="archive-content">
-		
-		<figure className="post-img-thumb">
+		<figure className="post-img-medium">
 			<img src={this.props.featured_image_thumbnail_url} />
 		</figure>
-		<header className="entry-header">
+		<div className="clearfix">
 		<Link to={"posts/" + this.props.id}>
-		 	<h4 dangerouslySetInnerHTML={this.rawMarkup(this.props.title.rendered)}></h4>
+		 	<h4 className="archive-post-title" dangerouslySetInnerHTML={this.rawMarkup(this.props.title.rendered)}></h4>
 		</Link>
 		
-			<h5>by {this.props.theSubtitleAuthor ? this.props.theSubtitleAuthor : this.props.theAuthor}</h5>
-		</header>
-		<div className="entry-content clearfix">
+			<h5 className="archive-author">{this.props.theSubtitleAuthor ? this.props.theSubtitleAuthor : this.props.theAuthor}</h5>
+		
 			<p dangerouslySetInnerHTML={this.rawMarkup(this.props.excerpt.rendered)} ></p>
 		</div>
 		
