@@ -1,13 +1,10 @@
 var React = require('react');
 var Router = require ('react-router');
-var Reflux = require('reflux');
-
 var Link = Router.Link;
 
 var DropdownItems = require('./dropdown-items');
 
-var Actions = require('../actions');
-var TopicStore = require ('../stores/topic-store');
+var numTimes=0;
 
 var categories = {
     cats: [{
@@ -37,21 +34,17 @@ var categories = {
       ]
    
   };
-
+var renderCount = 0;
 
 module.exports = React.createClass({
-	mixins: [
-		Reflux.listenTo(TopicStore, 'onChange')
-	],
 	getInitialState: function(){
 		return {
-			topics: categories.cats
+			topics: categories.cats 
 		}
 	},
-	componentWillMount: function(){
-		//Actions.getTopics();
-	},
 	render: function(){
+		console.log("header.renderCount: " + renderCount++)
+
 		return <nav className="navbar navbar-static-top">
 				<div className="container-fluid">
 					<Link to="/" className = "navbar-brand">
@@ -60,7 +53,7 @@ module.exports = React.createClass({
 					<ul className = "nav navbar-nav navbar-right">
 						{this.renderTopics()}
 					</ul>
-					{this.props.children}
+					
 				</div>
 				<div className="input-group">
 				<input 
@@ -79,15 +72,10 @@ module.exports = React.createClass({
 
 
 	},
-	onChange: function(event, topics){
-		console.log("header:onChange");
-		this.setState({
-			topics: topics
-		})
-	}, 
 	renderTopics: function(){
+		console.log("header: renderTopics")
 		return this.state.topics.slice(0,8).map(function(topic){
-			return <li key={topic.id}>
+			return <li >
 				<Link activeClassName="active" to={"topics/" + topic.id}>
 					{topic.name}
 				</Link>
