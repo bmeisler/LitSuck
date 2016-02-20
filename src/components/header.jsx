@@ -1,6 +1,10 @@
 var React = require('react');
 var Router = require ('react-router');
 var Link = Router.Link;
+var Button = require('./button');
+var Reflux = require('reflux');
+var Actions = require('../actions');
+var PostStore = require('../stores/post-store');
 
 var DropdownItems = require('./dropdown-items');
 
@@ -37,9 +41,13 @@ var categories = {
 var renderCount = 0;
 
 module.exports = React.createClass({
+	mixins: [
+		Reflux.listenTo(PostStore, 'onChange')
+	],
 	getInitialState: function(){
 		return {
-			topics: categories.cats 
+			topics: categories.cats,
+			posts: []
 		}
 	},
 	render: function(){
@@ -55,22 +63,35 @@ module.exports = React.createClass({
 					</ul>
 					
 				</div>
-				<div className="input-group">
-				<input 
+				<div className="input-group"> 
+				<input  
 					type="text" 
 					className = "form-control" />
 					<span className="input-group-btn">
-						<button
-						 className="btn btn-default" 
-						 type="button">
-							Search
-						</button>
+						
+						<Button  
+							whenClicked={this.handleClick} 
+							className="btn-default"
+							title='Search' />
 					</span>
 				</div>
 				<DropdownItems />
 			</nav>
 
 
+	},
+	onChange: function(event, posts){
+		console.log("header:onChange");
+		this.setState({
+			posts: posts
+		})
+	},
+	handleClick: function(e){
+
+		console.log("clicked the search button");
+		console.log(e.target.parentElement.parentElement.firstChild.value);
+		var searchTerm = e.target.parentElement.parentElement.firstChild.value;
+		Actions.getSearchResults(searchTerm);
 	},
 	renderTopics: function(){
 		console.log("header: renderTopics")

@@ -42,6 +42,13 @@ module.exports = Reflux.createStore({
 				this.triggerPostChange();
 			}.bind(this));
 	},
+	getSearchResults: function(s){
+		return Api.get('posts/?filter[s]=' + s)
+			.then(function(json){
+				this.searchResults = json; 
+				this.triggerSearchChange();
+			}.bind(this));
+	},
 	find: function(id){
 		console.log("find post with id: " + id);
 
@@ -65,5 +72,9 @@ module.exports = Reflux.createStore({
 	triggerRandomPostChange: function(){
 		console.log("triggerRandomPostChange");
 		this.trigger('change', this.randomPost);
+	},
+	triggerSearchChange: function(){
+		console.log("triggerRandomPostChange");
+		this.trigger('change', this.searchResults);
 	}
 });

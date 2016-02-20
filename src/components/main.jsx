@@ -3,7 +3,6 @@ This component instantiates the Header (with navigation, search and buttons)
 and TopicList - a list of categories */
 var React = require('react');
 var Header = require('./header');
-var TopicList = require('./topic-list');
 var PostRandom = require('./post-random');
 
 module.exports = React.createClass({

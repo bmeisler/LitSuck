@@ -5,5 +5,6 @@ module.exports = Reflux.createActions([
 	'getPosts',
 	'getRecentPosts',
 	'getPost',
-	'getRandomPost'
+	'getRandomPost',
+	'getSearchResults'
 ]);
