@@ -8,12 +8,14 @@ var Route = ReactRouter.Route;
 var Main = require('./components/main');
 var Topic = require('./components/topic'); 
 var PostDetail = require('./components/post-detail');
+var SearchResults = require('./components/search-results');
 
 module.exports = (
     <Router>
-        <Route path="/" component = {Main}>
+        <Route  path="/" component = {Main}>
         	<Route path="topics/:id" component = {Topic} />
         	<Route path="posts/:id" component = {PostDetail} />
+         	<Route path="search-results/:posts" component={SearchResults} />
         </Route>
     </Router>
 )

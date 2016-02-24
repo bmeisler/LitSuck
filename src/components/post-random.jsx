@@ -44,7 +44,7 @@ module.exports = React.createClass({
 		Actions.getRandomPost();
 	},
 	onChange: function(event, post){
-		console.log("onChange called in post-detail");
+		console.log("onChange called in post-random");
 		this.setState({
 			title: post.title,
 			content: post.content,

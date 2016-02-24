@@ -5,9 +5,9 @@ var Actions = require('../actions');
 var PostStore = require('../stores/post-store');
 
  module.exports = React.createClass({
- 	mixins: [
-		Reflux.listenTo(PostStore, 'onChange')
-	],
+ // 	mixins: [
+	// 	Reflux.listenTo(PostStore, 'onChange')
+	// ],
 	getInitialState: function(){
 		return {
 			posts: [],
@@ -28,12 +28,12 @@ var PostStore = require('../stores/post-store');
 					</span>
 				</form>
     },
-	onChange: function(event, posts){
-		console.log("search:onChange");
-		this.setState({ 
-			posts: posts
-		})
-	},
+	// onChange: function(event, posts){
+	// 	console.log("onChange called in Search");
+	// 	this.setState({ 
+	// 		posts: posts
+	// 	})
+	// },
 	handleChange: function(e){
 		this.state.searchTerm=e.target.value;
 		console.log("searchTerm: " + this.state.searchTerm);
@@ -44,5 +44,6 @@ var PostStore = require('../stores/post-store');
 		//console.log(e.target.parentElement.parentElement.firstChild.value);
 		//var searchTerm = e.target.parentElement.parentElement.firstChild.value;
 		Actions.getSearchResults(this.state.searchTerm);
+		
 	}
   });

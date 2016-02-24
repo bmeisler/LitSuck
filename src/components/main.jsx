@@ -7,6 +7,7 @@ var PostRandom = require('./post-random');
 
 module.exports = React.createClass({
 	render: function(){
+		console.log("main.render");
 		return <div>
 			<Header />
 			{this.content()}

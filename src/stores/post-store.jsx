@@ -74,7 +74,7 @@ module.exports = Reflux.createStore({
 		this.trigger('change', this.randomPost);
 	},
 	triggerSearchChange: function(){
-		console.log("triggerRandomPostChange");
+		console.log("triggerSearchChange");
 		this.trigger('change', this.searchResults);
 	}
 });
