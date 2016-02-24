@@ -5,7 +5,7 @@ NOTE: need to show author and thumbnail in PostPreview
 */
 
 var React = require('react');
-var PostStore = require('../stores/post-store');
+var SearchStore = require('../stores/search-store');
 var Reflux = require('reflux');
 var Actions = require('../actions');
 var ReactRouter = require('react-router');
@@ -22,7 +22,7 @@ So we use componentWillReceiveProps, which updates every time the props are rece
 
 module.exports = React.createClass({
 	mixins: [
-		Reflux.listenTo(PostStore, 'onChange')
+		Reflux.listenTo(SearchStore, 'onChange')
 	],
 	getInitialState: function(){
 		return{
@@ -40,18 +40,20 @@ module.exports = React.createClass({
 	},
 	render: function(){
 		return <div>
-		{this.renderPosts()}
+		<h2>Search results</h2>
+		{this.state.posts.length!==0 ? this.renderPosts() : 'No results found.'}
+
 		</div>
 	},
 	onChange: function(event, posts){
-		console.log("topic:onChange");
+		console.log("Search Results:onChange");
 		this.setState({
 			posts: posts
 		})
 	},
 	renderPosts: function(){
-		return this.state.posts.map(function(post){
-			return <PostPreview key={post.id}{...post} />
-		});
+			return this.state.posts.map(function(post){
+				return <PostPreview key={post.id}{...post} />
+			});
 	}
 }); 

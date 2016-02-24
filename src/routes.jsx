@@ -15,7 +15,7 @@ module.exports = (
         <Route  path="/" component = {Main}>
         	<Route path="topics/:id" component = {Topic} />
         	<Route path="posts/:id" component = {PostDetail} />
-         	<Route path="search-results/:posts" component={SearchResults} />
+         	<Route path="search-results/:id" component={SearchResults} />
         </Route>
     </Router>
 )
