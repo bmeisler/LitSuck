@@ -7,7 +7,7 @@ var PostRandom = require('./post-random');
 
 module.exports = React.createClass({
 	render: function(){
-		console.log("main.render");
+		console.log("MAIN.render");
 		return <div>
 			<Header />
 			{this.content()}
@@ -15,7 +15,7 @@ module.exports = React.createClass({
 		</div>
 	},
 	content: function(){
-
+		console.log("MAIN.content");
 		if(this.props.children){
 			return this.props.children
 		}else{

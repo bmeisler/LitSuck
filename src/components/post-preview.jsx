@@ -19,7 +19,7 @@ module.exports = React.createClass({
 			<img src={this.props.featured_image_thumbnail_url} />
 		</figure>
 		<div className="clearfix">
-		<Link to={"posts/" + this.props.id}>
+		<Link to={"/posts/" + this.props.id}>
 		 	<h4 className="archive-post-title" dangerouslySetInnerHTML={this.rawMarkup(this.props.title.rendered)}></h4>
 		</Link>
 		

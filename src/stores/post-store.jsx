@@ -55,7 +55,7 @@ module.exports = Reflux.createStore({
 		}
 	},
 	triggerChange: function(){
-		console.log("triggerChange");
+		console.log("STORE: triggerChange");
 		this.trigger('change', this.posts);//trigger is a method provided by Reflux
 	}, 
 	triggerPostChange: function(){

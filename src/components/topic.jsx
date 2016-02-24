@@ -25,31 +25,34 @@ module.exports = React.createClass({
 		Reflux.listenTo(PostStore, 'onChange')
 	],
 	getInitialState: function(){
+		console.log("TOPIC: getInitialState");
 		return{
 			posts: []
 		}
 	},
 	componentWillMount: function(){
+		console.log("TOPIC: componentWillMount");
 		Actions.getPosts(this.props.params.id);
 	},
 	componentWillReceiveProps: function(nextProps){
-		console.log("topic: received props");
+		console.log("TOPIC: componentWillReceiveProps");
 		Actions.getPosts(nextProps.params.id);
-		//Actions.getRecentPosts(nextProps.params.id);
-		//console.log(nextProps.params.id);
 	},
 	render: function(){
+		console.log("TOPIC: render");
 		return <div>
 		{this.renderPosts()}
 		</div>
 	},
-	onChange: function(event, posts){
-		console.log("topic:onChange");
+	onChange: function(e, posts){
+		console.log("TOPIC:onChange");
+		
 		this.setState({
 			posts: posts
 		})
 	},
 	renderPosts: function(){
+		console.log("TOPIC:renderPosts");
 		return this.state.posts.map(function(post){
 			return <PostPreview key={post.id}{...post} />
 		});

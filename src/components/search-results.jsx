@@ -31,13 +31,14 @@ module.exports = React.createClass({
 		}
 	},
 	componentWillMount: function(){
+		console.log("search-results: componentWillMount: this.props.params.id: " + this.props.params.id);
 		Actions.getPosts(this.props.params.id);
 	},
 	componentWillReceiveProps: function(nextProps){
-		console.log("topic: received props");
+		console.log("search-results: received props: nextProps.params.id: " + nextProps.params.id);
 		Actions.getPosts(nextProps.params.id);
 		//Actions.getRecentPosts(nextProps.params.id);
-		//console.log(nextProps.params.id);
+		//console.log(nextProps.params.id); 
 	},
 	render: function(){
 		return <div>

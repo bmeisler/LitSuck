@@ -22,7 +22,7 @@ var Link = ReactRouter.Link;
 					type="text" 
 					className = "form-control" />
 					<span className="input-group-btn">
-						<Link to={"search-results/" + this.posts}>
+						<Link to={"/search-results/" + "s=" + "foo"}>
 						<Button  
 							whenClicked={this.handleClick} 
 							className="btn-default"
