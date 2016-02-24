@@ -26,7 +26,8 @@ module.exports = React.createClass({
 	],
 	getInitialState: function(){
 		return{
-			posts: []
+			posts: [],
+			resultText:'searching...'
 		}
 	},
 	componentWillMount: function(){
@@ -41,15 +42,20 @@ module.exports = React.createClass({
 	render: function(){
 		return <div>
 		<h2>Search results</h2>
-		{this.state.posts.length!==0 ? this.renderPosts() : 'No results found.'}
+		{this.state.posts.length!==0 ? this.renderPosts() : this.state.resultText}
 
 		</div>
 	},
 	onChange: function(event, posts){
 		console.log("Search Results:onChange");
+		
+		var tempText;
+		{posts.length===0 ? tempText='No results found.' : tempText=''}
 		this.setState({
-			posts: posts
+			posts: posts,
+			resultText : tempText
 		})
+		
 	},
 	renderPosts: function(){
 			return this.state.posts.map(function(post){
