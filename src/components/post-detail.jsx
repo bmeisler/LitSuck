@@ -26,7 +26,7 @@ module.exports = React.createClass({
 				
 			<span dangerouslySetInnerHTML={this.rawMarkup(this.state.content.rendered)} />
 				
-
+			<RouteHandler {...props} />
 		</div>
 		
 	},
@@ -35,7 +35,8 @@ module.exports = React.createClass({
 			title: "",
 			content: "",
 			theAuthor: "",
-			theSubtitleAuthor: ""
+			theSubtitleAuthor: "",
+			slug: ""
 		}
 	}, 
 	componentWillMount: function(){
@@ -48,7 +49,8 @@ module.exports = React.createClass({
 			title: post.title,
 			content: post.content,
 			theAuthor: post.theAuthor,
-			theSubtitleAuthor: post.theSubtitleAuthor
+			theSubtitleAuthor: post.theSubtitleAuthor,
+			slug: post.slug
 		});
 	}
 });

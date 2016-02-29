@@ -66,7 +66,7 @@ module.exports = React.createClass({
 	renderTopics: function(){
 		console.log("HEADER: renderTopics")
 		return this.state.topics.slice(0,8).map(function(topic){
-			return <li >
+			return <li key={topic.id}>
 				<Link activeClassName="active" to={"/topics/" + topic.id}>
 					{topic.name}
 				</Link>

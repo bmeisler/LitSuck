@@ -9,6 +9,7 @@ var ReactRouter = require('react-router');
 var Link = ReactRouter.Link;
 
 module.exports = React.createClass({
+		
 	rawMarkup: function(raw) {
 	    var rawMarkup = marked(raw.toString(), {sanitize: false});
 	    return { __html: rawMarkup };
@@ -19,7 +20,7 @@ module.exports = React.createClass({
 			<img src={this.props.featured_image_thumbnail_url} />
 		</figure>
 		<div className="clearfix">
-		<Link to={"/posts/" + this.props.id}>
+		<Link to={"/posts/:" + this.props.id} params={{id:this.props.slug}}>
 		 	<h4 className="archive-post-title" dangerouslySetInnerHTML={this.rawMarkup(this.props.title.rendered)}></h4>
 		</Link>
 		
