@@ -15,10 +15,9 @@ var Main = require('./components/main');
 var Topic = require('./components/topic'); 
 var PostDetail = require('./components/post-detail');
 var SearchResults = require('./components/search-results');
-//add 'history={history}' to <Router> to get rid of shim/junk url - unfortunately, only works with localhost/node server!
-//doesn't work on evili.com w/o a server. Ouch.
+
 module.exports = (
-    <Router >
+    <Router history={history}>
         <Route  path="/" component = {Main}>
         	<Route path="/topics/:id"  component = {Topic} />
         	<Route path="/posts/:id"  component = {PostDetail} />
