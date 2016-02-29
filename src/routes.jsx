@@ -20,7 +20,7 @@ module.exports = (
     <Router history={history}>
         <Route  path="/" component = {Main}>
         	<Route path="/topics/:id"  component = {Topic} />
-        	<Route path="/posts/:id"  component = {PostDetail} />
+        	<Route path="posts/:id"  component = {PostDetail} />
          	<Route path="/search-results/:term"  component={SearchResults} />
         </Route>
     </Router>

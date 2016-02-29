@@ -26,7 +26,6 @@ module.exports = React.createClass({
 				
 			<span dangerouslySetInnerHTML={this.rawMarkup(this.state.content.rendered)} />
 				
-			<RouteHandler {...props} />
 		</div>
 		
 	},
