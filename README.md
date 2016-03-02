@@ -20,4 +20,6 @@ Began the project with Stephen Grider's ReactStarter framework. Then:
 	sudo npm install --save lodash
 ```
 
+Here's an event flow diagram:
 
+<script src="https://www.gliffy.com/diagramEmbed.js" type="text/javascript"></script><script type="text/javascript">gliffy_did="10101095";embedGliffy();</script>
