@@ -1,3 +1,5 @@
+/* contains the navbar with links to different categories, the search bar module and drop down items for
+more granular json (currently not used)*/
 var React = require('react');
 var Router = require ('react-router');
 var Link = Router.Link;

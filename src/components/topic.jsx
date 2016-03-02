@@ -1,7 +1,6 @@
 /* when we receive the props, containing the category id, we go and retrieve,
 from PostStore, the first 10 random posts from that category, and then render each of them
 using the PostPreview component, which shows the title and excerpt properties.
-NOTE: need to show author and thumbnail in PostPreview
 */
 
 var React = require('react');

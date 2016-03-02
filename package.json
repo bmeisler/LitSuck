@@ -27,5 +27,8 @@
     "vinyl-source-stream": "^1.1.0",
     "watchify": "^2.4.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "gulp-jshint": "^2.0.0",
+    "jshint": "^2.9.1"
+  }
 }

@@ -1,8 +1,11 @@
+/* makes the various calls to the web site to get random posts in a category, get recent posts, get a single random post
+or get a single post based on its individual id*/
 var Api = require('../utils/wp-rest-api');
 var Reflux = require('reflux');
 var Actions = require('../actions');
 var _ = require('lodash');
 
+var x
 
 module.exports = Reflux.createStore({
 	listenables: [Actions],//if any of the Actions in actions.jsx are called, (eg 'getTopics') call that method if you have it
@@ -10,7 +13,7 @@ module.exports = Reflux.createStore({
 		return Api.get('posts/?filter[orderby]=rand&filter[posts_per_page]=10&filter[cat]=' + topicId)
 			.then(function(json){
 				this.posts = json; 
-				this.triggerChange();
+				this.triggerChange() 
 			}.bind(this));
 	},
 	getRecentPosts: function(topicId){
@@ -31,11 +34,6 @@ module.exports = Reflux.createStore({
 		console.log("get post with id: " + id);
 		return Api.get('posts/' + id)
 			.then(function(json){
-				// if (this.posts){
-				// 	this.posts.push(json);
-				// }else{
-				// 	this.posts = [json];
-				// }
 				this.post = json;
 				console.log(this.post);
 				

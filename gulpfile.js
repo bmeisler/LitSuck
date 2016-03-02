@@ -10,6 +10,7 @@ var concat = require('gulp-concat');
 var sass = require('gulp-sass');
 var watch = require('gulp-watch');
 
+
 var notify = function(error) {
   var message = 'In: ';
   var title = 'Error: ';
@@ -41,6 +42,7 @@ var bundler = watchify(browserify({
   packageCache: {},
   fullPaths: true
 }));
+
 
 function bundle() {
   return bundler
@@ -84,3 +86,5 @@ gulp.task('default', ['build', 'serve', 'sass', 'watch']);
 gulp.task('watch', function () {
   gulp.watch('./sass/**/*.scss', ['sass']);
 });
+
+
