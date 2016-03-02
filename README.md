@@ -22,4 +22,4 @@ Began the project with Stephen Grider's ReactStarter framework. Then:
 
 Here's an event flow diagram:
 
-<script src="https://www.gliffy.com/diagramEmbed.js" type="text/javascript"></script><script type="text/javascript">gliffy_did="10101095";embedGliffy();</script>
+http://www.gliffy.com/go/publish/10101095
