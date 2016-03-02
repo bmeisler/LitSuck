@@ -21,6 +21,3 @@ Began the project with Stephen Grider's ReactStarter framework. Then:
 ```
 
 
-Then:
-
-
