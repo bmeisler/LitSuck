@@ -6,7 +6,7 @@ Began the project with Stephen Grider's ReactStarter framework. Then:
 ```
 	npm install
 
-	/*Installed ReactRouter:*/
+	*Installed ReactRouter:*
 	sudo npm install --save react-router@1.0.3 history
 
 	*Installed Fetch (native to Chrome) - install the polyfill to make it work in all browsers
