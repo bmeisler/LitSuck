@@ -1,4 +1,6 @@
-This is a React.js project which scrapes data from a WordPress site using the WP Rest API plugin. It is in a very early state - it will eventually be a mobile project built with React Native. It will eventually be run from an Express server, which will scrape multiple sites, parse the data and store it in a Firebase database. 
+This is a React.js project which scrapes data from a WordPress site using the WP Rest API plugin. It is in a very early state - it will eventually be a mobile project built with React Native. It will eventually be run from an Express server, which will scrape multiple sites, parse the data and store it in a MongoDB database. You can see the work in progress here:
+
+http://litsuck.com
 
 
 Began the project with Stephen Grider's ReactStarter framework. Then:
